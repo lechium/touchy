@@ -29,7 +29,7 @@ DerivedData/
 *.ipa
 *.dSYM.zip
 *.dSYM
-
+packages*
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
