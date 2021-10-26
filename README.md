@@ -1,5 +1,5 @@
 # touchy
-Leverage https://github.com/mapbox/Fingertips on jailbroken devices through an applist bundle
+Leverage https://github.com/mapbox/Fingertips (showing touches in targeted application) on jailbroken devices through an applist bundle
 
 It it possible to get it to show touches on SpringBoard as well, but currently it must be toggled through plutil and triggered manually through cycript until I improve the tweak.
 
