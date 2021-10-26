@@ -5,6 +5,8 @@ Instead of swapping the UIWindow implementation with the MBFingerTipWindow, this
 
 It it possible to get it to show touches on SpringBoard as well, but currently it must be toggled through plutil until I modify the prefloader bundle to have a special setting to show an option specifically for injection into SpringBoard.
 
+![SpringBoard screenshot](springboard.png "SpringBoard screenshot")  <br/>
+![Settings screenshot](screenshot.jpeg "Setting screenshot") <br/>
 ```
 plutil -value 1 -type bool -key com.apple.springboard /var/mobile/Library/Preferences/com.nito.touchy.plist
 killall -9 SpringBoard
