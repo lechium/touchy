@@ -1,5 +1,7 @@
 # touchy
-Leverage https://github.com/mapbox/Fingertips (showing touches in targeted application) on jailbroken devices through an applist bundle
+Leverage https://github.com/mapbox/Fingertips (showing touches in targeted application) on jailbroken devices through an applist bundle.
+
+Instead of swapping the UIWindow implementation with the MBFingerTipWindow, this adds the necessary extra methods/properties to UIWindow to do the exact same thing MBFingerTipWindow does to display touches.
 
 It it possible to get it to show touches on SpringBoard as well, but currently it must be toggled through plutil and triggered manually through cycript until I improve the tweak.
 
