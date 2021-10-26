@@ -13,4 +13,10 @@ cycript -p SpringBoard
  [w setActive:true]
 ```
 
+Conversely, to turn touches off in SpringBoard the following would be necessary
 
+```
+plutil -remove -key com.apple.springboard /var/mobile/Library/Preferences/com.nito.touchy.plist
+
+killall -9 SpringBoard
+```
