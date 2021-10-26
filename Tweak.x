@@ -1,3 +1,6 @@
+#import "Imports.h"
+#import "THelperClass.h"
+
 @interface MBFingerTipView : UIImageView
 
 @property (nonatomic, assign) NSTimeInterval timestamp;
@@ -20,6 +23,7 @@
     return [super rootViewController];
 }
 @end
+/*
 @interface UIWindow (ours)
 @property (nonatomic, strong) UIWindow *overlayWindow;
 @property (nonatomic, assign) BOOL active;
@@ -41,7 +45,7 @@
 - (void)removeFingerTipWithHash:(NSUInteger)hash animated:(BOOL)animated;
 - (BOOL)shouldAutomaticallyRemoveFingerTipForTouch:(UITouch *)touch;
 @end
-
+*/
 %hook UIWindow
 
 #import <objc/runtime.h>
@@ -370,6 +374,11 @@
         HBLogDebug(@"[touchy] initialize our code!");
 	id app = [UIApplication sharedApplication];
 	id window = [app keyWindow];
+	if (!app){
+		THelperClass *helper = [THelperClass sharedInstance];
+		[helper delayedInjection];
+	}
+	/*
 	HBLogDebug(@"[touchy] app: %@ keyWindow: %@", app, window);
 	    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         	HBLogDebug(@"[touchy] logger dispatched after 1 second");    
@@ -379,6 +388,6 @@
 		[window MBFingerTipWindow_commonInit];
 		[window setActive:true];
         });
- 
+ */
     }
 }

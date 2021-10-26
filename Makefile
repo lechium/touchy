@@ -7,7 +7,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = touchy 
 
-touchy_FILES = Tweak.x
+touchy_FILES = Tweak.x THelperClass.m
 touchy_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
