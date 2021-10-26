@@ -46,34 +46,6 @@
 
 #import <objc/runtime.h>
 
-- (id)initWithCoder:(NSCoder *)decoder
-{
-    // This covers NIB-loaded windows.
-    //
-    id og = %orig;
-    //delaying this call never gets fired, which is why sendEvent checks for overlayWindow as well.
-    if (og != nil) {
-/*        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [og MBFingerTipWindow_commonInit];
-        }); */
-    }
-    return og;
-}
-
-- (id)initWithFrame:(CGRect)rect
-{
-    // This covers programmatically-created windows.
-    //
-    id og = %orig;
-    
-    if (og != nil){
-       /* dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [og MBFingerTipWindow_commonInit];
-        }); */
-    }
-    return og;
-}
-
 %new - (UIImage *)_generateTouchImage {
     UIImage *_touchImage = nil;
     UIBezierPath *clipPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 50.0, 50.0)];
@@ -114,10 +86,9 @@
 
 - (void)sendEvent:(UIEvent *)event {
    if (self.active) {
-	 if (!self.overlayWindow) {
+        if (!self.overlayWindow) {
         	[self MBFingerTipWindow_commonInit];
-    }
-    
+	}
         NSSet *allTouches = [event allTouches];
         for (UITouch *touch in [allTouches allObjects]) {
             
@@ -295,8 +266,7 @@
     NSTimeInterval now = [[NSProcessInfo processInfo] systemUptime];
     const CGFloat REMOVAL_DELAY = 0.2;
     
-    for (MBFingerTipView *touchView in [self.overlayWindow subviews])
-    {
+    for (MBFingerTipView *touchView in [self.overlayWindow subviews]) {
         if ( ! [touchView isKindOfClass:[MBFingerTipView class]])
             continue;
         
