@@ -132,7 +132,7 @@
                     }
                     
                     if (touchView == nil && touch.phase != UITouchPhaseStationary) {
-                        touchView = [[MBFingerTipView alloc] initWithImage:self.touchAlphachImage];
+                        touchView = [[MBFingerTipView alloc] initWithImage:self.touchImage];
                         [self.overlayWindow addSubview:touchView];
                     }
                     
