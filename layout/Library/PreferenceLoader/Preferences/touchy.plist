@@ -8,6 +8,8 @@
 		<string>touchy</string>
 		<key>cell</key>
 		<string>PSLinkCell</string>
+		<key>icon</key>
+		<string>touchy.png</string>
 	</dict>
 	<key>items</key>
 	<array>
@@ -15,7 +17,21 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>touchy Application List</string>
+			<string>Applications</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>defaults</key>
+			<string>com.nito.touchy</string>
+			<key>label</key>
+			<string>Show touches in SpringBoard</string>
+			<key>key</key>
+			<string>com.apple.springboard</string>
+			<key>default</key>
+			<false/>
+			<key>PostNotification</key>
+			<string>com.nito.touchy.springboardchanged</string>
 		</dict>
 		<dict>
 			<key>ALAllowsSelection</key>
@@ -37,7 +53,7 @@
 			<key>isController</key>
 			<string>1</string>
 			<key>label</key>
-			<string>touchy enabled applications</string>
+			<string>Enabled applications</string>
 		</dict>
 		<dict>
 			<key>cell</key>

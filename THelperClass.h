@@ -4,4 +4,5 @@
 @property NSTimer *injectionTimer;
 + (instancetype)sharedInstance;
 - (void)delayedInjection;
+- (void)listenForNotifications;
 @end

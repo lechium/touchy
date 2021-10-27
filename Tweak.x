@@ -367,6 +367,10 @@
         }
     }
     NSDictionary *ourDict = [[NSDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.nito.touchy.plist"];
+    if ([bundleID isEqualToString:@"com.apple.springboard"]){
+    	HBLogDebug(@"[touchy we got SpringBoard, listen for notifications!");
+	[[THelperClass sharedInstance] listenForNotifications];
+    }
     NSNumber *value = [ourDict objectForKey:bundleID];
     NSNumber *valueName = [ourDict objectForKey:name];
     HBLogDebug(@"[touchy] bundle ID %@ bundle display name: %@", bundleID, name);
