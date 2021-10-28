@@ -1,5 +1,5 @@
 export GO_EASY_ON_ME=1
-export DEBUG=1
+export DEBUG=0
 THEOS_DEVICE_IP=xphone
 INSTALL_TARGET_PROCESSES = SpringBoard
 

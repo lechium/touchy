@@ -351,9 +351,10 @@
 %end
 
 %ctor {
-    
+#ifdef DEBUG    
     NSString *processName = [[[[NSProcessInfo processInfo] arguments] lastObject] lastPathComponent];
     HBLogDebug(@"Process name: %@", processName);
+#endif
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *bundleID = [bundle bundleIdentifier];
     NSDictionary *infoDict = [bundle infoDictionary];
@@ -377,21 +378,9 @@
     if ([value boolValue] == YES || [valueName boolValue] == YES) {
         HBLogDebug(@"[touchy] initialize our code!");
 	id app = [UIApplication sharedApplication];
-	id window = [app keyWindow];
 	if (!app){
 		THelperClass *helper = [THelperClass sharedInstance];
 		[helper delayedInjection];
 	}
-	/*
-	HBLogDebug(@"[touchy] app: %@ keyWindow: %@", app, window);
-	    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        	HBLogDebug(@"[touchy] logger dispatched after 1 second");    
-		id app = [UIApplication sharedApplication];
-		UIWindow *window = [app keyWindow];
-		HBLogDebug(@"[touchy] app: %@ keyWindow: %@", app, window);
-		[window MBFingerTipWindow_commonInit];
-		[window setActive:true];
-        });
- */
     }
 }
