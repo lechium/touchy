@@ -6,5 +6,6 @@ Instead of swapping the UIWindow implementation with the MBFingerTipWindow, this
 SpringBoard touches can be toggled from the settings now  as well, no more need to manually toggle with plutil
 
 ![SpringBoard screenshot](springboard.png "SpringBoard screenshot")  <br/>
+![Preferences screenshot](settings.jpeg "Root Settings screenshot") <br/>
 ![Settings screenshot](screenshot.jpeg "Setting screenshot") <br/>
 
