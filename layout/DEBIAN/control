@@ -1,9 +1,8 @@
 Package: com.nito.touchy
 Name: touchy
-Version: 1.0-1
+Version: 1.0
 Architecture: iphoneos-arm
 Description: show touches in any app targeted via the applist preferenceloader bundle
-Depiction: https://level3tjg.xyz/repo/depictions/?p=com.level3tjg.bfdecrypt
 Depends: firmware(>=11.0), preferenceloader, applist
 Maintainer: Kevin Bradley <kevin@nito.tv>
 Author: Kevin Bradley <kevin@nito.tv>
