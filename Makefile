@@ -1,6 +1,6 @@
 export GO_EASY_ON_ME=1
 export DEBUG=0
-#THEOS_DEVICE_IP=xphone
+THEOS_DEVICE_IP=xphone
 INSTALL_TARGET_PROCESSES = SpringBoard
 
 include $(THEOS)/makefiles/common.mk

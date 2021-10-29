@@ -64,30 +64,5 @@ static void SettingsChangedNotificationFired(CFNotificationCenterRef center, voi
     //UIApplicationWillEnterForegroundNotification
     //UIWindowDidBecomeKeyNotification
 	[[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(inject:) name:UIWindowDidBecomeKeyNotification object:nil];
-    return;
-	NSString *processName = [[[[NSProcessInfo processInfo] arguments] lastObject] lastPathComponent];
-	if (![processName isEqualToString:@"SpringBoard"]){
-		return;
-	}
-	HBLogDebug(@"[touchy] WE ARE SPRINGBOARD");
-	if (self.injectionTimer){
-		[self.injectionTimer invalidate];
-		self.injectionTimer = nil;
-	}
-	self.injectionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:true block:^(NSTimer * _Nonnull timer) {
-		id app = [UIApplication sharedApplication];
-		UIWindow *window = [app keyWindow];
-		if (!window){
-			[self delayedInjection];
-			return;
-		}
-		if ([window overlayWindow]){
-			return;
-		}
-		[window MBFingerTipWindow_commonInit];
-		[window setActive:true];
-		//[self.injectionTimer invalidate];
-		//self.injectionTimer = nil;
-    }];
 }
 @end
